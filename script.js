@@ -1,4 +1,4 @@
-let n = "123456789";
+let n = "1900000000";
 let numberToWord = (n) => {
   let inputNum = n.split("");
   inputNum = inputNum.map((e) => parseInt(e));
@@ -95,8 +95,10 @@ let numberToWord = (n) => {
               ? ""
               : remaining[inputNum[0] - 2]
           } ${
-            oneTo9[inputNum[1] - 1] === undefined ? "" : oneTo9[inputNum[1] - 1]
-          } thousand`
+            oneTo9[inputNum[1] - 1] === undefined
+              ? ""
+              : oneTo9[inputNum[1] - 1] + " thousand"
+          }`
         );
         inputNum.splice(0, 2);
       }
@@ -124,8 +126,10 @@ let numberToWord = (n) => {
               ? ""
               : remaining[inputNum[0] - 2]
           } ${
-            oneTo9[inputNum[1] - 1] === undefined ? "" : oneTo9[inputNum[1] - 1]
-          } lac`
+            oneTo9[inputNum[1] - 1] === undefined
+              ? ""
+              : oneTo9[inputNum[1] - 1] + " lac"
+          }`
         );
         inputNum.splice(0, 2);
       }
@@ -153,11 +157,52 @@ let numberToWord = (n) => {
               ? ""
               : remaining[inputNum[0] - 2]
           } ${
-            oneTo9[inputNum[1] - 1] === undefined ? "" : oneTo9[inputNum[1] - 1]
-          } crore`
+            oneTo9[inputNum[1] - 1] === undefined
+              ? ""
+              : oneTo9[inputNum[1] - 1] + " crore"
+          }`
         );
         inputNum.splice(0, 2);
       }
+      //! for 10 character
+    } else if (inputNum.length === 10) {
+      toWord.push(
+        oneTo9[inputNum[0] - 1] === undefined
+          ? ""
+          : oneTo9[inputNum[0] - 1] + " billion"
+      );
+      inputNum.splice(0, 1);
+      //! for 11 character
+    } else if (inputNum.length === 11) {
+      if (inputNum[0] === 1) {
+        toWord.push(
+          tenTo20[inputNum[1]] === undefined
+            ? ""
+            : tenTo20[inputNum[1]] + " billion"
+        );
+        inputNum.splice(0, 2);
+      } else {
+        toWord.push(
+          `${
+            remaining[inputNum[0] - 2] === undefined
+              ? ""
+              : remaining[inputNum[0] - 2]
+          } ${
+            oneTo9[inputNum[1] - 1] === undefined
+              ? ""
+              : oneTo9[inputNum[1] - 1] + " billion"
+          }`
+        );
+        inputNum.splice(0, 2);
+      }
+      //! for 12 character
+    } else if (inputNum.length === 12) {
+      toWord.push(
+        oneTo9[inputNum[0] - 1] === undefined
+          ? ""
+          : oneTo9[inputNum[0] - 1] + " trillion"
+      );
+      inputNum.splice(0, 1);
     }
   }
   return toWord.join(" ");
