@@ -1,4 +1,4 @@
-let n = "209012131";
+let n = "123456789";
 let numberToWord = (n) => {
   let inputNum = n.split("");
   inputNum = inputNum.map((e) => parseInt(e));
@@ -29,7 +29,7 @@ let numberToWord = (n) => {
   let remaining = [
     "twenty",
     "thirty",
-    "fourty",
+    "forty",
     "fifty",
     "sixty",
     "seventy",
