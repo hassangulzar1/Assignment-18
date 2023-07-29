@@ -1,7 +1,4 @@
-let n = prompt("Enter Number to get in Words (12 Digits Allowed!!)");
-if (n.length > 12) {
-  alert("Hun maza kar putrrr hehe");
-}
+let n = "123234";
 let numberToWord = (n) => {
   let inputNum = n.split("");
   inputNum = inputNum.map((e) => parseInt(e));
@@ -165,6 +162,6 @@ let numberToWord = (n) => {
   }
   let mainArr = [];
   toWord.forEach((e) => (e !== "" ? mainArr.push(e) : mainArr.push()));
-  return alert(`${mainArr.join(" ")}`);
+  return mainArr.join(" ");
 };
 console.log(numberToWord(n));
