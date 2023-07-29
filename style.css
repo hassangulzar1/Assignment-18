@@ -1,4 +1,10 @@
-/* CSS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Button  */
 .button-56 {
   align-items: center;
   background-color: #f7f2f2;
@@ -57,4 +63,9 @@
   .button-56 {
     padding: 0 40px;
   }
+}
+
+h1 {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 1px;
 }

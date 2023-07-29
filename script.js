@@ -1,4 +1,3 @@
-let n = "123234";
 let numberToWord = (n) => {
   let inputNum = n.split("");
   inputNum = inputNum.map((e) => parseInt(e));
@@ -164,4 +163,13 @@ let numberToWord = (n) => {
   toWord.forEach((e) => (e !== "" ? mainArr.push(e) : mainArr.push()));
   return mainArr.join(" ");
 };
-console.log(numberToWord(n));
+
+// !EvenT Listner
+convertBtn.addEventListener("click", function () {
+  let n = document.getElementsByClassName("numInput")[0].value;
+  if (n === undefined) return false;
+  else {
+    let value = numberToWord(n);
+    output.innerText = value.toLowerCase();
+  }
+});
