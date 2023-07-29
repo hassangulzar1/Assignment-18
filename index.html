@@ -13,25 +13,72 @@
   </head>
   <body>
     <!--! Navbar  -->
-    <nav class="navbar bg-dark">
-      <div class="container-fluid">
-        <h2 class="text-white fw-bold">Number to Word's</h2>
-      </div>
-    </nav>
+    <header>
+      <nav class="navbar bg-dark">
+        <div class="container-fluid">
+          <h2 class="text-white fw-bold">Number to Word's</h2>
+        </div>
+      </nav>
+    </header>
 
     <!-- bottom section  -->
-    <div class="container">
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Regular link</a></li>
-        <li>
-          <a class="dropdown-item active" href="#" aria-current="true"
-            >Active link</a
-          >
-        </li>
-        <li><a class="dropdown-item" href="#">Another link</a></li>
-      </ul>
-    </div>
 
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <div class="input-group mb-3 w-50">
+            <input
+              type="text"
+              placeholder="Enter Number"
+              class="form-control"
+              aria-label="Text input"
+              maxlength="12"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios1"
+              value="option1"
+              checked
+            />
+            <label class="form-check-label" for="exampleRadios1">
+              Default radio
+            </label>
+          </div>
+          <div class="form-check mx-4">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="option2"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Second default radio
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios3"
+              value="option3"
+            />
+            <label class="form-check-label" for="exampleRadios3">
+              Disabled radio
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- js Links  -->
     <script src="script.js"></script>
     <script
