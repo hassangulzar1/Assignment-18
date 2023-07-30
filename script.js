@@ -164,12 +164,48 @@ let numberToWord = (n) => {
   return mainArr.join(" ");
 };
 
+// Click Logic
+let lowerCase = true;
+let upperCase = false;
+let sentenceCase = false;
+// radio 1
+radio1.addEventListener("click", () => {
+  lowerCase = true;
+  upperCase = false;
+  sentenceCase = false;
+});
+// Radio 2
+radio2.addEventListener("click", () => {
+  upperCase = true;
+  lowerCase = false;
+  sentenceCase = false;
+});
+// radio 3
+radio3.addEventListener("click", () => {
+  sentenceCase = true;
+  lowerCase = false;
+  upperCase = false;
+});
+
 // !EvenT Listner
 convertBtn.addEventListener("click", function () {
   let n = document.getElementsByClassName("numInput")[0].value;
+  let value = numberToWord(n);
   if (n === undefined) return false;
-  else {
-    let value = numberToWord(n);
+  else if (lowerCase) {
     output.innerText = value.toLowerCase();
+  } else if (upperCase) {
+    output.innerText = value.toUpperCase();
+  } else if (sentenceCase) {
+    let toArr = value.split(" ");
+    console.log(toArr);
+    let answer = [];
+    for (let i = 0; i < toArr.length; i++) {
+      if (toArr[i] === "") continue;
+      answer.push(
+        `${toArr[i][0].toUpperCase()}${toArr[i].slice(1, toArr[i].length)}`
+      );
+    }
+    output.innerText = answer.join(" ");
   }
 });
