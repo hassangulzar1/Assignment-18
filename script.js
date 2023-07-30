@@ -198,7 +198,6 @@ convertBtn.addEventListener("click", function () {
     output.innerText = value.toUpperCase();
   } else if (sentenceCase) {
     let toArr = value.split(" ");
-    console.log(toArr);
     let answer = [];
     for (let i = 0; i < toArr.length; i++) {
       if (toArr[i] === "") continue;
